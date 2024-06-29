@@ -120,3 +120,36 @@ def cloud(df=None,ax=None):
   df['cloudpos'] = np.concatenate(([0], np.diff(np.where(df['Close'] > df['Close'].shift(26), 1, 0))))
 
   return df
+
+indicts = {
+	"sma":sma,
+	"ema":ema,
+	"macd": macd,
+	"bband":bband,
+	"rsi":rsi,
+	"fkd":fkd,
+	"dmi":dmi,
+	"cloud":cloud,
+}
+
+indicts = {
+	"sma":sma,
+	"ema":ema,
+	"macd": macd,
+	"bband":bband,
+	"rsi":rsi,
+	"fkd":fkd,
+	"dmi":dmi,
+	"cloud":cloud,
+}
+
+indicts = {
+	"sma":sma,
+	"ema":ema,
+	"macd": macd,
+	"bband":bband,
+	"rsi":rsi,
+	"fkd":fkd,
+	"dmi":dmi,
+	"cloud":cloud,
+}
