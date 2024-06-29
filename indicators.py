@@ -21,10 +21,9 @@ def ema(df=None,sw=5,lw=25):
   return df
 ##移動平均収束拡散法
 def macd(df=None,sw=12,lw=26,sig=9):
-  sw = f'ema{sw}'
-  lw = f'ema{lw}'
-  df = ema(df=df,sw=12,lw=26)
-  df['macd'] = df[sw] - df[lw]
+  a = df['Close'].ewm(span=sw,).mean()
+  b = df['Close'].ewm(span=lw,).mean()
+  df['macd'] = a - b 
   df['macdsig'] = df['macd'].ewm(sig).mean()
   df['macdhis'] = df['macd'] - df['macdsig']
   df.loc[df['Close'].isna(),['macd','macdsig','macdhis']] = np.nan
