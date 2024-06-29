@@ -121,35 +121,13 @@ def cloud(df=None,ax=None):
 
   return df
 
-indicts = {
-	"sma":sma,
-	"ema":ema,
-	"macd": macd,
-	"bband":bband,
-	"rsi":rsi,
-	"fkd":fkd,
-	"dmi":dmi,
-	"cloud":cloud,
-}
-
-indicts = {
-	"sma":sma,
-	"ema":ema,
-	"macd": macd,
-	"bband":bband,
-	"rsi":rsi,
-	"fkd":fkd,
-	"dmi":dmi,
-	"cloud":cloud,
-}
-
-indicts = {
-	"sma":sma,
-	"ema":ema,
-	"macd": macd,
-	"bband":bband,
-	"rsi":rsi,
-	"fkd":fkd,
-	"dmi":dmi,
-	"cloud":cloud,
-}
+method_dict = {
+    "sma":sma,
+    "ema":ema,
+    "macd": macd,
+    "bband":bband,
+    "rsi":rsi,
+    "fkd":fkd,
+    'dmi':dmi,
+    'cloud':cloud,
+  }
