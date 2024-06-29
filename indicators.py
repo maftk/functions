@@ -23,7 +23,7 @@ def ema(df=None,sw=5,lw=25):
 def macd(df=None,sw=12,lw=26,sig=9):
   sw = f'ema{sw}'
   lw = f'ema{lw}'
-  df = ''.ema(df=df,ax=ax,sw=12,lw=26)
+  df = ema(df=df,sw=12,lw=26)
   df['macd'] = df[sw] - df[lw]
   df['macdsig'] = df['macd'].ewm(sig).mean()
   df['macdhis'] = df['macd'] - df['macdsig']
