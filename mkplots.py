@@ -1,4 +1,5 @@
-from mplfinance import make_addplot
+from ..utils import tryport
+tryport('mplfinance',None,'make_addplot')
 import datetime
 from dateutil.relativedelta import relativedelta
 def mkplots(df=None,plots=None,ax=None,panel=0,title=None):
