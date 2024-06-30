@@ -19,6 +19,7 @@ def ema(df=None,sw=5,lw=25):
   lema = f'ema{lw}'
   df[sema] = df['Close'].ewm(span=sw,).mean()
   df[lema] = df['Close'].ewm(span=lw,).mean()
+  df.loc[df['Close'].isna(),[sema,lema]] = np.nan
   df['emapos'] = np.concatenate(([0],np.diff(np.where(df[sema] > df[lema], 1, 0))))
   return df
 ##移動平均収束拡散法
