@@ -1,4 +1,4 @@
-from ..utils import tryport
+from .trypo import tryport
 tryport('numpy','np')
 tryport('pandas','pd')
 
