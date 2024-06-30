@@ -2,7 +2,7 @@ from mplfinance import make_addplot
 import datetime
 from dateutil.relativedelta import relativedelta
 def mkplots(df=None,plots=None,ax=None,panel=0,title=None):
-  plots.copy().pop(-1)
+  plots = plots[:-1]
   mk= []
   fill = []
   wid = 1
