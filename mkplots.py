@@ -1,4 +1,4 @@
-from ..utils import tryports
+from .trypo import tryports
 tryports('mplfinance','make_addplot')
 import datetime
 from dateutil.relativedelta import relativedelta
