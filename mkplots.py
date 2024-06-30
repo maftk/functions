@@ -1,5 +1,7 @@
-from .trypo import tryports
-tryports('mplfinance','make_addplot')
+from .trypo import tryport
+make_addplot = tryport('mplfinance').make_addplot
+# from .trypo import tryports
+# tryports('mplfinance','make_addplot')
 import datetime
 from dateutil.relativedelta import relativedelta
 def mkplots(df=None,plots=None,ax=None,panel=0,title=None):
