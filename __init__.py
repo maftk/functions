@@ -1,2 +1,2 @@
-from indicators import *
-from mkplots import *
+from .mkplots import *
+from .indicators import *
