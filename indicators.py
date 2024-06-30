@@ -1,7 +1,6 @@
 from .trypo import tryport
 
-# tryport('numpy','np')
-import numpy as np
+tryport('numpy','np')
 tryport('pandas','pd')
 
 def sma(df=None,sw=5,lw=25):
