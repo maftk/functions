@@ -1,3 +1,4 @@
+import numpy as np
 def ndaysrate(temp,day_ago=4):
     tec = [ 'Open', 'High', 'Low', 'Close', ]
     num_sihyou = len(tec)
