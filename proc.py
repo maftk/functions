@@ -10,3 +10,12 @@ def rfromc(df):
       x[f'{i}{a}'] = x[a].shift(i)
   x = x.dropna()
   return x
+
+def priceagos(df,ago=5):
+  x = df.copy()
+  x = x.drop(['Adj Close','Volume'],axis=1)
+  for i in range(ago):
+    for a in ['Open','High','Low','Close']:
+      x[f'{i+1}{a}'] = x[a].shift(i)
+  x = x.dropna()
+  return x
