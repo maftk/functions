@@ -10,4 +10,3 @@ def rfromc(df):
       x[f'{i}{a}'] = x[a].shift(i)
   x = x.dropna()
   return x
-rfromc2(df)
