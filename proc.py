@@ -28,6 +28,8 @@ def mergedfs(tickers,data,func,scaler,**kwargs):
     df = func(df,**kwargs)
     scaler.fit(df)
     df = scaler.fit_transform(df)
+    leng = int(df.shape[0] * .9)
+    df = df[:leng].copy()
     if flag:
       X = df.copy()
       flag = False
