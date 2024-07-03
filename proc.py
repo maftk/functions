@@ -1,3 +1,4 @@
+from sklearn.preprocessing import MinMaxScaler
 def rfromc(df):
   x = df.copy()
   x['Open'] = df.Open / df.Close.shift(1)
@@ -20,14 +21,16 @@ def priceagos(df,ago=5):
   x = x.dropna()
   return x
 
-def mergedfs(tickers,data,func,**kwargs):
+def mergedfs(tickers,data,func,scaler,**kwargs):
   flag = True
   for tik in tickers:
     df = data[tik].copy()
-    x = func(**kwargs)
+    scaler.fit(df)
+    df = scaler.fit_transform(df)
+    x = func(df,**kwargs)
     if flag:
       X = x.copy()
       flag = False
     else:
-      X = pd.concat([X, x], axis=0)
+      X = np.concatenate((X, x), axis=0)
   return X
