@@ -19,3 +19,15 @@ def priceagos(df,ago=5):
       x[f'{i+1}{a}'] = x[a].shift(i)
   x = x.dropna()
   return x
+
+def mergedfs(tickers,data,func,**kwargs):
+  flag = True
+  for tik in tickers:
+    df = data[tik].copy()
+    x = func(**kwargs)
+    if flag:
+      X = x.copy()
+      flag = False
+    else:
+      X = pd.concat([X, x], axis=0)
+  return X
