@@ -1,7 +1,5 @@
-from .trypo import tryport
-
-np = tryport('numpy')
-pd = tryport('pandas')
+import pandas as pd
+import numpy as np
 
 def sma(df=None,sw=5,lw=25):
   s = f'sma{sw}'

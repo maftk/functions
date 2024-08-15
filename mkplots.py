@@ -1,9 +1,7 @@
-from .trypo import tryport
-make_addplot = tryport('mplfinance').make_addplot
-# from .trypo import tryports
-# tryports('mplfinance','make_addplot')
+from mplfinance import make_addplot
 import datetime
 from dateutil.relativedelta import relativedelta
+
 def mkplots(df=None,plots=None,ax=None,panel=0,title=None):
   mk= []
   fill = []
@@ -33,6 +31,7 @@ def mkplots(df=None,plots=None,ax=None,panel=0,title=None):
   elif fill:
     mk+= [make_addplot(df[plots],**share,fill_between=fill)]
   return mk
+
 def mksignal(df=None,pos=None,panel=0,buy=True,sell=False):
   c = 'Close'
   mk = []
@@ -45,6 +44,7 @@ def mksignal(df=None,pos=None,panel=0,buy=True,sell=False):
     selldf.loc[selldf[pos].isin([0,1]),c] = None
     mk += [make_addplot(selldf[c],scatter=True,markersize=100,marker='v',color='b')]
   return mk
+
 def setdate(df=None,month=3):
   ed = df.index[-1]+datetime.timedelta(days=1)
   st = ed - relativedelta(months=month)
